@@ -1,0 +1,89 @@
+/* pages/withdraw/withdraw.wxss */
+.page-wrapper {
+  width: 90%;
+  margin: 20rpx auto 100rpx;
+  padding: 30rpx 0;
+  background-color: #fff;
+}
+
+.form-wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.page-wrapper input {
+  width: calc(100% - 44rpx);
+  margin-top: 20rpx;
+  padding: 10rpx 20rpx;
+  border: 2rpx solid #BBBBBB;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+}
+
+.img-upload-container {
+  width: 100%;
+  margin-top: 20rpx;
+  vertical-align: top;
+}
+
+.img-upload-container .img-preview-container {
+  position: relative;
+  margin: 20rpx;
+}
+
+.img-upload-container .img-preview-container .img-close {
+  position: absolute;
+  width: 30rpx;
+  height: 30rpx;
+  right: -15rpx;
+  top: -15rpx;
+}
+
+.img-upload-container view {
+  display: inline-block;
+  vertical-align: top;
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.img-preview {
+  width: 100%;
+  height: 100%;
+}
+
+.img-upload-container .choose-wrapper {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 2rpx solid #BBBBBB;
+}
+
+.img-upload-container .choose-wrapper image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.btn-loc:not([size='mini']) {
+  display: inline-block;
+  margin: 0;
+  margin-top: 20rpx;
+  width: 100%;
+  background-color: #EEEEEE;
+  border: 2rpx solid #BBBBBB;
+  border-radius: 10rpx;
+  color: #101010;
+  font-size: 24rpx;
+}
+
+.page-wrapper label {
+  width: 100%;
+  margin-top: 20rpx;
+  color: #6A6A6A;
+  font-size: 24rpx;
+}
+
+.balance {
+  color: #bbb;
+  font-size: 24rpx;
+  margin: 20rpx 0;
+}

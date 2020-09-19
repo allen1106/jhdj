@@ -1,0 +1,45 @@
+<!--components/searchInput/search.wxml-->
+<view class="my-class">
+  <view class="header">
+    <view class="left">{{itemInfo.realname}}</view>
+    <view class="tag-wrapper right">
+      <text class="tag-item" wx:for="{{itemInfo.label}}" wx:key="item" style="color: #fff;background-color: {{item.bg_color}}">{{item.name}}</text>
+    </view>
+  </view>
+  <view class="content-panel" bindtap="_bindTap" data-id="{{itemInfo.id}}">
+    <view class="type">
+      <label>类型：</label>
+      {{itemInfo.type}}
+    </view>
+    <view class="type">
+      <label>商品编码：</label>
+      {{itemInfo.code}}
+    </view>
+    <view class="title">{{itemInfo.name}}</view>
+    <view class="detail">{{itemInfo.content}}</view>
+    <view class="price">{{itemInfo.price}}元</view>
+    <view class="img-wrapper">
+      <image class=".image" wx:for="{{itemInfo.imgs}}" wx:key="index" src="{{itemInfo.imgs[index]}}" data-src="{{index}}" catchtap="previewImg"></image>
+    </view>
+  </view>
+  <view class="btn-wrapper" wx:if="{{isClient == 1}}">
+    <view class="msg">{{itemInfo.hits}}浏览、</view>
+    <view class="msg">[发布日期]：{{itemInfo.addtime}}</view>
+    <button class="button orange-btn" bindtap="_bindPurchase">购买</button>
+    <button class="button green-btn" bindtap="_bindCollect">收藏</button>
+  </view>
+  <view class="btn-wrapper" wx:if="{{isClient == 0 && itemInfo.products_status == 0}}">
+    <button class="button green-btn" bindtap="_bindDelete">删除</button>
+    <button class="button orange-btn" bindtap="_bindEdit">编辑</button>
+  </view>
+  <!-- <view style="display: {{showPreview}};" class="preview-container" bindtap="closePreview">
+     <scroll-view class="img-wrapper" bindtouchmove="touchmoveCallback" bindtouchstart="touchstartCallback" scroll-x="true" scroll-y="true">
+      <image class="image" src="{{itemInfo.imgs[currentIdx]}}" style="width: {{ touch.scaleWidth }}px;height: {{ touch.scaleHeight }}px" bindload="bindload"></image>
+    </scroll-view> 
+    <view class="text-wrapper">
+      <text class="text">{{itemInfo.content}}</text>
+    </view>
+    <image wx:if="{{currentIdx > 0}}" class="img-left" src="/image/iconfont/to-left.svg" catchtap="toLeft"></image>
+    <image wx:if="{{currentIdx < itemInfo.imgs.length - 1}}" class="img-right" src="/image/iconfont/to-right.svg" catchtap="toRight"></image>
+  </view> -->
+</view>

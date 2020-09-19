@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "search-input": "/components/search-input/search-input",
+    "item": "/components/item/item"
+  },
+  "navigationBarTitleText": "产品列表"
+}

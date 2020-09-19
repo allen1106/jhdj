@@ -1,0 +1,91 @@
+.header {
+  height: 300rpx;
+  background-color: #00A4FF;
+  position: relative;
+}
+
+swiper {
+  width: 90%;
+  height: 250rpx;
+  margin: 0 auto;
+}
+
+swiper image {
+  width: 100%;
+  height: 250rpx;
+}
+
+.page-item {
+  position: absolute;
+  bottom: -34rpx;
+  left: 5%;
+  width: 90%;
+}
+
+.main {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 34rpx;
+}
+
+.main .panel {
+  width: 100%;
+  margin-top: 20rpx;
+  border-radius: 15rpx;
+  background-color: #fff;
+}
+
+.type-menu {
+  height: 300rpx;
+}
+
+.type-menu .type-item {
+  display: inline-flex;
+  flex-direction: column;
+  width: 20%;
+  height: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+.type-menu image {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.type-menu text {
+  font-size: 28rpx;
+}
+
+.title {
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 32rpx;
+}
+
+.recommend {
+  /* height: 400rpx; */
+}
+
+.recommend-item {
+  display: inline-flex;
+  flex-direction: column;
+  width: 33.33%;
+  height: 200rpx;
+  justify-content: center;
+  align-items: center;
+}
+
+.recommend-item image {
+  margin: 20rpx;
+  width: calc(100% - 20rpx);
+  height: calc(100% - 20rpx);
+}
+
+.item-wrapper {
+  /* height: 80vw; */
+  padding: 20rpx;
+  margin-top: 20rpx;
+  background-color: #fff;
+}

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "search-input": "/components/search-input/search-input",
+    "item": "/components/item/item",
+    "tab-bar": "/custom-tab-bar/index"
+  },
+  "navigationBarTitleText": "我的发布"
+}

@@ -1,0 +1,56 @@
+<!--pages/orderdetail/orderDetial.wxml-->
+<view class="main">
+  <view class="content-panel">
+    <view class="img-wrapper">
+      <image src="{{orderInfo.img}}"></image>
+    </view>
+    <view class="text-wrapper">
+      <view class="title">{{orderInfo.name}}</view>
+      <view class="co-red">{{orderInfo.price}}元</view>
+    </view>
+  </view>
+  <block wx:if="{{orderInfo.status == 1}}">
+    <view class="btn-wrapper">
+      <button class="bg-green" bindtap="bindPay">微信支付</button>
+    </view>
+  </block>
+  <block wx:if="{{orderInfo.status == 2}}">
+    <view class="detail-wrapper">
+      <view class="title">联系电话：{{orderInfo.phone}}</view>
+      <view>联系地址：{{orderInfo.address}}</view>
+      <view>地图定位：</view>
+      <map id="map" longitude="{{orderInfo.lng}}" latitude="{{orderInfo.lat}}" scale="14" show-location style="width: 100%; height: 200px;" bindtap="bindOpenLoc" markers="{{markers}}"></map>
+    </view>
+    <view class="btn-wrapper">
+      <button class="bg-orange" bindtap="bindContact">马上联系</button>
+    </view>
+    <view class="btn-wrapper">
+      <button class="bg-gray" bindtap="bindRefund">退款</button>
+      <button class="bg-green" bindtap="bindPickup">确认收货</button>
+    </view>
+  </block>
+  <block wx:if="{{orderInfo.status == 3}}">
+    <view class="tipmsg-wrapper">
+      <image src="/image/iconfont/pending-refund.svg"></image>
+      <text>退款申请中，请稍后</text>
+    </view>
+  </block>
+  <block wx:if="{{orderInfo.status == 4}}">
+    <view class="tipmsg-wrapper">
+      <image src="/image/iconfont/success-refund.svg"></image>
+      <text>退款成功</text>
+    </view>
+  </block>
+  <block wx:if="{{orderInfo.status == 5}}">
+    <view class="tipmsg-wrapper">
+      <image src="/image/iconfont/success-pick.svg"></image>
+      <text>取货成功</text>
+    </view>
+  </block>
+  <block wx:if="{{orderInfo.status == 6}}">
+    <view class="tipmsg-wrapper">
+      <image src="/image/iconfont/cancel.svg"></image>
+      <text>订单超时已取消</text>
+    </view>
+  </block>
+</view>

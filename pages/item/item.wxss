@@ -1,0 +1,17 @@
+/* pages/item/item.wxss */
+.page-item {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.item-wrapper {
+  /* height: 80vw; */
+  padding: 20rpx;
+  margin-top: 20rpx;
+  background-color: #fff;
+}
+
+.main {
+  width: 90%;
+  margin: 0 auto;
+}

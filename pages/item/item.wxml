@@ -1,0 +1,4 @@
+<!--pages/item/item.wxml-->
+<view class="main">
+  <item my-class="item-wrapper" itemInfo="{{itemInfo}}" bindTap="0" isClient="1"></item>
+</view>

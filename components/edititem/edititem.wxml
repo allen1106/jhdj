@@ -1,0 +1,42 @@
+<!--components/edititem/edititem.wxml-->
+<view class="page-wrapper">
+  <form bindsubmit="bindSubmitForm">
+  <view class="form-wrapper">
+    <picker bindchange="bindTypeChange" value="{{typeIdx}}" range="{{typeList}}" range-key="name">
+      <view class="input-wrapper">
+        <input name="department" value="{{typeList[typeIdx].name}}" disabled="true"></input>
+      </view>
+    </picker>
+    <input name="name" placeholder="输入物品名称" value="{{itemInfo.name}}"></input>
+    <textarea name="content" placeholder="输入介绍" value="{{itemInfo.content}}"></textarea>
+    <view class="img-upload-container">
+      <view class="img-preview-container" wx:for="{{imgList}}" wx:key="index">
+        <image class="img-preview" src="{{imgList[index]}}" data-src="{{imgList[index]}}" bindtap="previewImage"></image>
+        <image class="img-close" src="/image/post/close.png" bindtap="delImg" data-src="{{imgList[index]}}"></image>
+      </view>
+      <view class="img-preview-container choose-wrapper" bindtap="chooseImage">
+        <image class="img-preview" src="/image/post/fas-fa-plus.svg"></image>
+      </view>
+    </view>
+    <view class="inline" >
+      <input name="price" placeholder="输入价格" type="digit" value="{{itemInfo.price}}"></input>
+      <input name="number" placeholder="输入数量" type="number" value="{{itemInfo.number}}"></input>
+    </view>
+    <input name="phone" placeholder="联系电话" value="{{itemInfo.phone}}"></input>
+    <input name="address" placeholder="输入地址" value="{{itemInfo.address}}"></input>
+    <button class="btn-loc" bindtap="bindGetLoc">点击获取位置</button>
+    <map wx:if="{{lng&&lat}}" id="map" longitude="{{lng}}" latitude="{{lat}}" scale="14" show-location style="width: 100%; height: 200px;" markers="{{markers}}"></map>
+    <view class="label">选择标签：</view>
+    <view class="tag-container">
+      <text wx:for="{{tagList}}" wx:key="item" data-idx="{{index}}" style="color: #fff;background-color: {{item.bg_color}}" wx:if="{{item.checked}}" bindtap="bindCheckTag">{{item.name}}</text>
+      <text wx:for="{{tagList}}" wx:key="item" data-idx="{{index}}" style="color: {{item.bg_color}};background-color: rgba(0,0,0,.1);" wx:if="{{!item.checked}}" bindtap="bindCheckTag">{{item.name}}</text>
+    </view>
+    <checkbox-group bindchange="checkboxChange">
+      <checkbox value="isAgree" checked="{{isagree}}"></checkbox>
+      <view class="checkbox">我同意<view class="co-blue" bindtap="navigateToService">发布条款</view>，保证信息合法合规</view>
+    </checkbox-group>
+    <button wx:if="{{!id}}" class="btn-post" form-type="submit">确认发布</button>
+    <button wx:if="{{id}}" class="btn-post" form-type="submit">保存编辑</button>
+  </view>
+  </form>
+</view>

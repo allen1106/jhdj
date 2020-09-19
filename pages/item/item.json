@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "item": "/components/item/item",
+    "tab-bar": "/custom-tab-bar/index"
+  },
+  "navigationBarTitleText": "产品详情页"
+}

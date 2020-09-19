@@ -1,0 +1,45 @@
+/* components/flatitem/flatitem.wxss */
+.co-red {
+  color: #FF0000;
+}
+
+.content-panel {
+  position: relative;
+  width: 80%;
+  padding: 20rpx 10%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-wrapper {
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.img-wrapper .image {
+  width: 100%;
+  height: 100%;
+}
+
+.text-wrapper {
+  flex: 5;
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 28rpx;
+}
+
+.status-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 5rpx;
+  text-align: center;
+  align-content: center;
+  font-size: 24rpx;
+  color: #fff;
+  background-color: #FFC125;
+}

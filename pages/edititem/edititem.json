@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "item-edit": "/components/edititem/edititem"
+  },
+  "navigationBarTitleText": "产品编辑"
+}

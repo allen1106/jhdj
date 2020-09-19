@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "tab-bar": "/custom-tab-bar/index",
+    "item-edit": "/components/edititem/edititem"
+  },
+  "navigationBarTitleText": "发布产品"
+}

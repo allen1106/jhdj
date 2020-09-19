@@ -1,0 +1,22 @@
+<!--pages/withdraw/withdraw.wxml-->
+<view class="page-wrapper">
+  <form bindsubmit="bindSubmitForm">
+  <view class="form-wrapper">
+    <input name="money" placeholder="输入提现金额"></input>
+    <view class="balance">当前余额¥{{balance}}</view>
+    <view class="label">上传收款二维码图片</view>
+    <view class="img-upload-container">
+      <view class="img-preview-container" wx:for="{{imgList}}" wx:key="index">
+        <image class="img-preview" src="{{imgList[index]}}" data-src="{{imgList[index]}}" bindtap="previewImage"></image>
+        <image class="img-close" src="/image/post/close.png" bindtap="delImg" data-src="{{imgList[index]}}"></image>
+      </view>
+      <view wx:if="{{imgList.length < imgCount}}" class="img-preview-container choose-wrapper" bindtap="chooseImage">
+        <image class="img-preview" src="/image/post/fas-fa-plus.svg"></image>
+      </view>
+    </view>
+    <button wx:if="{{!id}}" class="btn-post" form-type="submit">确认发布</button>
+    <button wx:if="{{id}}" class="btn-post" form-type="submit">保存编辑</button>
+  </view>
+  </form>
+</view>
+

@@ -1,0 +1,22 @@
+/* components/searchInput/search.wxss */
+.search-input {
+  display: flex;
+  height: 68rpx;
+  margin: 0 auto;
+  width: 100%;
+  border-radius: 68rpx;
+  align-items: center;
+  background-color: #fff;
+}
+
+.search-input .icon-search {
+  width:  30rpx;
+  height: 30rpx;
+  margin: 0 20rpx;
+}
+
+.search-input .input {
+  width: calc(100% - 180rpx);
+  font-size: 28rpx;
+  text-align: center;
+}

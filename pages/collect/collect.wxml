@@ -1,0 +1,9 @@
+<!--pages/collect/collect.wxml-->
+<view class="header">
+  <search-input searchHandler="{{searchHandler}}" my-class="page-item" searchWords="{{key}}"></search-input>
+</view>
+<view class="main">
+  <view class="item-list">
+    <flat-item wx:for="{{itemList}}" wx:key="item" my-class="item-wrapper" itemInfo="{{item}}" bindTapHandler="{{bindTapHandler}}"></flat-item>
+  </view>
+</view>

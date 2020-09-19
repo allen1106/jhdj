@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "search-input": "/components/search-input/search-input",
+    "flat-item": "/components/flatitem/flatitem",
+    "tab-bar": "/custom-tab-bar/index"
+  },
+  "navigationBarTitleText": "我的收藏"
+}

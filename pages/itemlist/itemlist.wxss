@@ -1,0 +1,24 @@
+/* pages/itemlist/itemlist.wxss */
+.header {
+  width: 100%;
+  /* height: 120rpx; */
+  padding: 26rpx 0;
+  background-color: #00A4FF;
+}
+
+.page-item {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.item-wrapper {
+  /* height: 80vw; */
+  padding: 20rpx;
+  margin-top: 20rpx;
+  background-color: #fff;
+}
+
+.main {
+  width: 90%;
+  margin: 0 auto;
+}

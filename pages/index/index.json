@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "search-input": "/components/search-input/search-input",
+    "tab-bar": "/custom-tab-bar/index",
+    "item": "/components/item/item"
+  },
+  "navigationBarTitleText": "驼城好物"
+}

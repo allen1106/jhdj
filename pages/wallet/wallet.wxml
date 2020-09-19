@@ -1,0 +1,32 @@
+<!--pages/wallet/wallet.wxml-->
+<view class="header">
+  <view class="balance-wrapper" bindtap="navigateToWallet">
+    <view>
+      <text class="cor-white">我的余额</text>
+      <text class="cor-gray">已提现</text>
+    </view>
+    <view>
+      <text class="cor-white">{{userInfo.money}}元</text>
+      <text class="cor-gray">{{userInfo.point}}元</text>
+    </view>
+  </view>
+  <button class="btn-submit" bindtap="navigateToWithdraw">申请提现</button>
+</view>
+<view class="divider"></view>
+<view class="main">
+  <view class="show-title">收支明细</view>
+  <view class="show-panel">
+    <view class="table">
+      <view class="tr">
+        <view class="td">记录</view>
+        <view class="td">金额</view>
+        <view class="td">日期</view>
+      </view>
+      <view class="tr" wx:for="{{withdrawList}}" wx:key="item">
+        <view class="td">提现</view>
+        <view class="td">{{item.money}}元</view>
+        <view class="td">{{item.time}}</view>
+      </view>
+    </view>
+  </view>
+</view>

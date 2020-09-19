@@ -1,0 +1,19 @@
+<!--pages/buyitem/buyitem.wxml-->
+<view class="main">
+  <view class="content-panel">
+    <view class="img-wrapper">
+      <image src="{{itemInfo.img}}"></image>
+    </view>
+    <view class="text-wrapper">
+      <view class="title">{{itemInfo.name}}</view>
+      <view class="co-red">{{itemInfo.price}}元</view>
+    </view>
+  </view>
+  <view class="policy-wrapper">
+    <view class="title">购买条款</view>
+    <view>1. 购买条款</view>
+    <view>2. 购买条款</view>
+    <view>3. 购买条款</view>
+  </view>
+  <button class="btn-pay" bindtap="bindPay">微信支付</button>
+</view>

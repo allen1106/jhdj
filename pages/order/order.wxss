@@ -1,0 +1,57 @@
+/* pages/order/order.wxss */
+.header {
+  position: relative;
+  width: 100%;
+  height: 120rpx;
+  padding: 26rpx 0;
+  background-color: #00A4FF;
+}
+
+.page-item {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.switch-tab {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 24rpx;
+}
+
+.switch-tab>view{
+  flex: 1;
+  padding: 10rpx 0;
+  display: inline-flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.active{
+  border-bottom: 5rpx solid #FFFF8C;
+}
+swiper{
+  width: 100%;
+}
+swiper-item{
+  display: flex;
+  font-size: 44rpx;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-list {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.item-wrapper {
+  padding: 20rpx;
+  margin-top: 20rpx;
+  background-color: #fff;
+}
