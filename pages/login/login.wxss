@@ -36,4 +36,9 @@ page {
   color: #fff;
   border-radius: 45rpx;
   font-size: 28rpx;
+  margin-bottom: 30rpx;
+}
+
+.login-container .btn-login button:not([size='mini']).co-gray {
+  background-color: #cbcbcb;
 }

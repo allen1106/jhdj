@@ -94,7 +94,7 @@ App({
         // }
         // return shareInfo
         return {
-          title: "驼城好物"
+          title: "久航大集"
         }
       }
     }, pageConfig);

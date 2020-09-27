@@ -7,12 +7,6 @@ Component({
       pagePath: "/pages/index/index",
       withIcon: false,
       text: "大厅"
-    }, {
-      color: "#fff",
-      selectedColor: "#fff",
-      pagePath: "/pages/postitem/postitem",
-      withIcon: true,
-      text: "发布"
     },{
       color: "#000",
       selectedColor: "#000",

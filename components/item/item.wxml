@@ -8,11 +8,11 @@
   </view>
   <view class="content-panel" bindtap="_bindTap" data-id="{{itemInfo.id}}">
     <view class="type">
-      <label>类型：</label>
+      <label class="label">类型：</label>
       {{itemInfo.type}}
     </view>
     <view class="type">
-      <label>商品编码：</label>
+      <label class="label">商品编码：</label>
       {{itemInfo.code}}
     </view>
     <view class="title">{{itemInfo.name}}</view>

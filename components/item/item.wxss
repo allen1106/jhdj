@@ -21,7 +21,7 @@
   font-size: 28rpx;
 }
 
-.type label {
+.type .label {
   color: #00c0ff;
 }
 

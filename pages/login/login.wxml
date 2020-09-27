@@ -8,5 +8,6 @@
   </view>
   <view class="btn-login">
     <button open-type="getUserInfo" bindgetuserinfo="login">微信登录</button>
+    <button class="co-gray" bindtap="cacelLogin">暂不登录</button>
   </view>
 </view>

@@ -15,5 +15,7 @@
     <view>2. 购买条款</view>
     <view>3. 购买条款</view>
   </view>
+  <view class="pickup-wrapper">
+  </view>
   <button class="btn-pay" bindtap="bindPay">微信支付</button>
 </view>
