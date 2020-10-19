@@ -36,14 +36,14 @@ swiper image {
 }
 
 .type-menu {
-  height: 300rpx;
+  /* height: 300rpx; */
 }
 
 .type-menu .type-item {
   display: inline-flex;
   flex-direction: column;
   width: 20%;
-  height: 50%;
+  height: 140rpx;
   justify-content: center;
   align-items: center;
 }
@@ -64,15 +64,11 @@ swiper image {
   font-size: 32rpx;
 }
 
-.recommend {
-  /* height: 400rpx; */
-}
-
 .recommend-item {
   display: inline-flex;
   flex-direction: column;
   width: 33.33%;
-  height: 200rpx;
+  /* height: 200rpx; */
   justify-content: center;
   align-items: center;
 }
@@ -80,12 +76,18 @@ swiper image {
 .recommend-item image {
   margin: 20rpx;
   width: calc(100% - 20rpx);
-  height: calc(100% - 20rpx);
+  /* height: calc(100% - 20rpx); */
+}
+
+.item-list item:nth-child(2n) {
+  margin-left: 18rpx;
 }
 
 .item-wrapper {
-  /* height: 80vw; */
-  padding: 20rpx;
+  display: inline-block;
+  margin: 0 auto;
   margin-top: 20rpx;
+  width: calc(50% - 10rpx);
   background-color: #fff;
+  border-radius: 20rpx;
 }

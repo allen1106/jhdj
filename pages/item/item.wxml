@@ -1,4 +1,53 @@
 <!--pages/item/item.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
 <view class="main">
-  <item my-class="item-wrapper" itemInfo="{{itemInfo}}" bindTap="0" isClient="1"></item>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true" bindtap="previewImg">
+    <swiper-item wx:for="{{itemInfo.imgs}}" wx:key="item">
+      <view class="swiper-item">
+        <image mode="widthFix" src="{{item}}"></image>
+      </view>
+    </swiper-item>
+  </swiper>
+  <view class="content-panel">
+    <view class="title">{{itemInfo.name}}</view>
+    <view class="detail">{{itemInfo.desc}}</view>
+    <view class="type">
+      <label>类型：</label>
+      {{itemInfo.type}}
+    </view>
+    <view class="type">
+      <label>商品编码：</label>
+      {{itemInfo.code}}
+    </view>
+    <view class="price">
+      <view>￥{{itemInfo.price}}</view>
+      <view class="tag-wrapper right">
+        <text class="tag-item" wx:for="{{itemInfo.label}}" wx:key="item" style="color: #fff;background-color: {{item.bg_color}}">{{item.name}}</text>
+      </view>
+      <!-- <view class="btn-wrapper">
+        <button class="button orange-btn" bindtap="_bindPurchase">购买</button>
+        <button class="button green-btn" bindtap="_bindCollect">收藏</button>
+      </view> -->
+    </view>
+  </view>
+
+  <view class="content-panel top-blank">
+    <view class="header">商品详情</view>
+    <!-- <view class="desc">{{itemInfo.content}}</view> -->
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+  </view>
+
+  <view class="top-blank">
+  </view>
+
+  <view class="content-panel menu">
+    <view class="btn-wrapper btn-back" bindtap="navBack">
+      <image src="/image/iconfont/to-left.png"></image>
+      <view>更多商品</view>
+    </view>
+    <view class="btn-wrapper">
+      <button class="button orange-btn" bindtap="_bindPurchase">购买</button>
+      <button class="button green-btn" bindtap="_bindCollect">收藏</button>
+    </view>
+  </view>
 </view>

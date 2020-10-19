@@ -46,7 +46,7 @@ App({
     })
     // 获取商品分类列表
     api.phpRequest({
-      url: 'category.php',
+      url: 'old_category.php',
       success: function (res) {
         var typeList = res.data
         that.globalData.typeList = typeList
@@ -56,7 +56,8 @@ App({
   globalData: {
     userInfo: null,
     tagList: null,
-    typeList: null
+    typeList: null,
+    pickIdx: 0,
   }
 })
 

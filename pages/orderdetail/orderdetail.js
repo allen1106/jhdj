@@ -16,9 +16,21 @@ Page({
      * 4 - 退款成功，出现相关提示信息
      * 5 - 取货成功，即交易成功
      * 6 - 订单超时
+     * 7 - 发货中
+     * 8 - 已送至村代理
      */
     orderInfo: null,
-    markers: []
+    markers: [],
+    statusMapping: {
+      "1": "已提交，待付款",
+      "2": "已付款，待发货",
+      "3": "申请退款中",
+      "4": "退款成功",
+      "5": "发货中",
+      "6": "已送至村代理",
+      "7": "已收货",
+      "8": "付款超时，取消订单",
+    }
   },
 
   /**
@@ -42,6 +54,7 @@ Page({
       },
       success: function (res) {
         res.data.img = res.data.imgs && res.data.imgs.split(',')[0]
+        res.data.statusDesc = that.data.statusMapping[res.data.status]
         that.setData({
           orderInfo: res.data,
           markers: [{
@@ -96,10 +109,10 @@ Page({
   bindPickup: function (e) {
     var that = this
     api.phpRequest({
-      url: 'pickup.php',
+      url: 'receipt.php',
       data: {
         'userid': wx.getStorageSync('userId'),
-        'order_id': that.data.id
+        'id': that.data.id
       },
       success: function (res) {
         if (res.data.status == 1) {

@@ -58,3 +58,16 @@
   font-size: 24rpx;
   background-color:#16BF11;
 }
+
+.pickup-wrapper {
+  display: flex;
+  width: 80%;
+  height: 80rpx;
+  margin: 20rpx auto;
+  padding: 0 10rpx;
+  border-radius: 20rpx;
+  border: 2rpx solid #E5E5E5;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 32rpx;
+}

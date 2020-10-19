@@ -16,7 +16,8 @@
     "pages/edititem/edititem",
     "pages/withdraw/withdraw",
     "pages/wallet/wallet",
-    "pages/agreement/service"
+    "pages/agreement/service",
+    "pages/agentorder/list"
   ],
   "tabBar": {
     "custom": true,
@@ -27,11 +28,11 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "大厅"
+        "text": "首页"
       },
       {
         "pagePath": "pages/postitem/postitem",
-        "text": "发布"
+        "text": "发布二手"
       },
       {
         "pagePath": "pages/personal/personal",

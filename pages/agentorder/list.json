@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "search-input": "/components/search-input/search-input",
+    "flat-item": "/components/flatitem/flatitem"
+  },
+  "navigationBarTitleText": "村代订单"
+}

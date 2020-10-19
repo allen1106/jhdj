@@ -1,0 +1,16 @@
+<!--pages/order/order.wxml-->
+<view class="header">
+  <search-input searchHandler="{{searchHandler}}" my-class="page-item" searchWords="{{key}}"></search-input>
+  <view class='switch-tab'>
+    <view wx:for='{{arr}}' class='{{currentTab == index ? "active" : ""}}' data-current='{{index}}' bindtap='swichNav'>{{item}}</view>
+  </view>
+</view>
+<view class="main">
+  <swiper style="height: {{swiperHeight}};" current="{{currentTab}}"  bindchange="changeSwiperTab">
+    <swiper-item>
+      <view class="item-list">
+        <flat-item id="node" wx:for="{{allList}}" wx:key="item" my-class="item-wrapper" itemInfo="{{item}}" bindTapHandler="{{bindNavToOrderHandler}}"></flat-item>
+      </view>
+    </swiper-item>
+  </swiper>
+</view>

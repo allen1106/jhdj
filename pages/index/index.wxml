@@ -2,7 +2,7 @@
   <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
     <swiper-item wx:for="{{background}}" wx:key="*this">
       <view class="swiper-item">
-        <image src="{{host}}{{item.img}}"></image>
+        <image src="{{item.img}}"></image>
       </view>
     </swiper-item>
   </swiper>
@@ -11,17 +11,28 @@
 <view class="main">
   <view class="type-menu panel">
     <view wx:for="{{typeList}}" wx:key="item" class="type-item" data-id="{{item.cid}}" bindtap="navigateItemList">
-      <image src="{{host}}{{item.img}}"></image>
+      <image src="{{item.img}}"></image>
       <text>{{item.name}}</text>
     </view>
   </view>
   <view class="title panel">产品推荐</view>
   <view class="recommend panel">
     <view wx:for="{{recommendList}}" wx:key="item" class="recommend-item">
-      <image src="{{item.img}}" data-id="{{item.id}}" bindtap="navigateItemDetail"></image>
+      <image mode="widthFix" src="{{item.img}}" data-id="{{item.id}}" bindtap="navigateItemDetail"></image>
     </view>
   </view>
-  <block wx:for="{{latestItemList}}" wx:key="item">
-    <item my-class="item-wrapper" itemInfo="{{item}}" bindTapHandler="{{bindTapHandler}}" isClient="1"></item>
-  </block>
+
+  <view class="title panel">在售商品</view>
+  <view class="item-list">
+    <block wx:for="{{latestItemList}}" wx:key="item">
+      <item my-class="item-wrapper" itemInfo="{{item}}" bindTapHandler="{{bindTapHandler}}" isClient="1"></item>
+    </block>
+  </view>
+
+  <view class="title panel">二手商品</view>
+  <view class="item-list">
+    <block wx:for="{{oldList}}" wx:key="item">
+      <item my-class="item-wrapper" itemInfo="{{item}}" bindTapHandler="{{bindTapHandler}}" isClient="1"></item>
+    </block>
+  </view>
 </view>

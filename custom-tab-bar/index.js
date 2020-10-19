@@ -6,7 +6,13 @@ Component({
       selectedColor: "#000",
       pagePath: "/pages/index/index",
       withIcon: false,
-      text: "大厅"
+      text: "首页"
+    }, {
+      color: "#fff",
+      selectedColor: "#fff",
+      pagePath: "/pages/postitem/postitem",
+      withIcon: true,
+      text: "发布二手"
     },{
       color: "#000",
       selectedColor: "#000",

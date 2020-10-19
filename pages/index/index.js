@@ -17,6 +17,8 @@ Page({
     duration: 500,
     typeList: [],
     recommendList: [],
+    latestItemList: [],
+    oldList: [],
     searchHandler: null,
     latestItemList: [],
     bindTapHandler: utils.navToItemDetail
@@ -79,6 +81,20 @@ Page({
         console.log(res.data)
         that.setData({
           latestItemList: res.data,
+        })
+      }
+    })
+
+    api.phpRequest({
+      url: 'old.php',
+      success: function (res) {
+        for (var i in res.data) {
+          res.data[i].imgs = res.data[i].imgs && res.data[i].imgs.split(',')
+          res.data[i].label = utils.getTagList(res.data[i].label, app.globalData.tagList)
+        }
+        console.log(res.data)
+        that.setData({
+          oldList: res.data,
         })
       }
     })

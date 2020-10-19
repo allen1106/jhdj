@@ -7,6 +7,7 @@
     <view class="text-wrapper">
       <view class="title">{{itemInfo.name}}</view>
       <view class="co-red">{{itemInfo.price}}元</view>
+      <view wx:if="{{itemInfo.profit != undefined}}" class="co-red"><label>预计收益：</label>{{itemInfo.profit}}元</view>
     </view>
     <view wx:if="{{itemInfo.status}}" class="status-wrapper">{{itemInfo.status}}</view>
   </view>

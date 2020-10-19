@@ -80,6 +80,13 @@ Component({
         url: '/pages/order/order?tabid=' + tabid,
       })
     },
+
+    navigateToAgent: function (e) {
+      var tabid = e.currentTarget.dataset.tab
+      wx.navigateTo({
+        url: '/pages/agentorder/list?tabid=' + tabid,
+      })
+    },
   
     contact: function () {
       var that = this
@@ -95,6 +102,17 @@ Component({
             })
           }
         }
+      })
+    },
+
+    logout: function () {
+      wx.removeStorageSync('userId')
+      app.globalData.userInfo = null
+      app.globalData.tagList = null
+      app.globalData.typeList = null
+      app.globalData.pickIdx = null
+      wx.reLaunch({
+        url: '../index/index'
       })
     }
   }

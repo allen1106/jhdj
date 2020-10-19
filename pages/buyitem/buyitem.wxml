@@ -16,6 +16,11 @@
     <view>3. 购买条款</view>
   </view>
   <view class="pickup-wrapper">
+    <picker bindchange="bindPickChange" value="{{pickIdx}}" range="{{pickAddrList}}" range-key="shopname">
+      <view class="picker">
+          取货地址：{{pickAddrList[pickIdx].shopname}}
+      </view>
+    </picker>
   </view>
   <button class="btn-pay" bindtap="bindPay">微信支付</button>
 </view>

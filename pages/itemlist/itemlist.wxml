@@ -3,7 +3,9 @@
   <search-input searchHandler="{{searchHandler}}" my-class="page-item" searchWords="{{key}}"></search-input>
 </view>
 <view class="main">
-  <view class="item-list" wx:for="{{itemList}}" wx:key="item">
+  <view class="item-list">
+    <block wx:for="{{itemList}}" wx:key="item">
     <item my-class="item-wrapper" itemInfo="{{item}}" bindTapHandler="{{bindTapHandler}}" isClient="1"></item>
+    </block>
   </view>
 </view>

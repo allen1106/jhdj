@@ -33,9 +33,14 @@
   font-size: 28rpx;
 }
 
+.text-wrapper view {
+  margin-top: 10rpx;
+}
+
 .detail-wrapper {
   width: 85%;
-  margin: 20rpx auto;
+  margin: 0 auto;
+  padding: 20rpx 0;
   font-size: 24rpx;
 }
 .detail-wrapper view {
@@ -91,4 +96,12 @@
 .tipmsg-wrapper text {
   margin-left: 20rpx;
   font-size: 28rpx;
+}
+
+label {
+  color: #00c0ff;
+}
+
+.co-red {
+  color: #FF0000;
 }

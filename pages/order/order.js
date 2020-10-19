@@ -10,12 +10,15 @@ Page({
   data: {
     key: '',
     searchHandler: null,
-    arr: ["卖出的", "买到的", "进行中"],
+    arr: ["我的卖出", "待付款", "进行中", "交易成功", "退款", "全部订单"],
     swiperHeight: "0rpx",
     currentTab: 0,
     sellItemList: [],
-    buyItemList: [],
-    pendItemList: [],
+    unPayList: [],
+    pendList: [],
+    deliverList: [],
+    receiveList: [],
+    allList: [],
     bindNavToOrderHandler: util.navToOrderDetail,
     bindNavToSellHandler: util.navToSellDetail,
     statusDescList: ["待支付", "待收货", "退款中", "已退款", "已收货", "已取消"]
@@ -39,19 +42,24 @@ Page({
    */
   onShow: function () {
     var that = this
-    that.fetchSellList()
-    that.fetchBuyList()
-    that.fetchPendingList()
+    that.fetchData()
   },
 
   searchHandler: function (seachWords) {
     this.setData({
       key: seachWords.trim()
     }, () => {
-      this.fetchSellList()
-      this.fetchBuyList()
-      this.fetchPendingList()
+      this.fetchData()
     })
+  },
+
+  fetchData: function () {
+    this.fetchSellList()
+    this.fetchUnPayList()
+    this.fetchPendList()
+    this.fetchSuccessList()
+    this.fetchRefundList()
+    this.fetchAllList()
   },
 
   fetchSellList: function () {
@@ -71,59 +79,80 @@ Page({
           sellItemList: res.data
         })
         if (that.data.currentTab == 0) {
-          that.setData({
-            swiperHeight: 220 * res.data.length + "rpx"
+          var query = that.createSelectorQuery()
+          console.log(query.select('#node').boundingClientRect())
+          query.select('#node').boundingClientRect()
+          query.exec(function (res1) {
+            let sumHeigth = (res1[0].height + 10) * res.data.length + 'px'
+            that.setData({
+              swiperHeight: sumHeigth
+            })
           })
         }
       }
     })
   },
 
-  fetchBuyList: function () {
+  fetchUnPayList: function () {
     var that = this
-    that.fetchOrderList(0, (res) => {
-      for (var i in res.data) {
-        res.data[i].img = res.data[i].imgs && res.data[i].imgs.split(',')[0]
-      }
+    that.fetchOrderList(1, (data) => {
       that.setData({
-        buyItemList: res.data
+        unPayList: data
       })
-      console.log(that.data.currentTab)
-      if (that.data.currentTab == 1) {
-        that.setData({
-          swiperHeight: 220 * res.data.length + "rpx"
-        })
-      }
     })
   },
-
-  fetchPendingList: function () {
+  fetchPendList: function () {
     var that = this
-    that.fetchOrderList(1, (res) => {
-      for (var i in res.data) {
-        res.data[i].img = res.data[i].imgs && res.data[i].imgs.split(',')[0]
-      }
+    that.fetchOrderList(2, (data) => {
       that.setData({
-        pendItemList: res.data
+        pendList: data
       })
-      if (that.data.currentTab == 2) {
-        that.setData({
-          swiperHeight: 220 * res.data.length + "rpx"
-        })
-      }
+    })
+  },
+  fetchSuccessList: function () {
+    var that = this
+    that.fetchOrderList(3, (data) => {
+      that.setData({
+        deliverList: data
+      })
+    })
+  },
+  fetchRefundList: function () {
+    var that = this
+    that.fetchOrderList(4, (data) => {
+      that.setData({
+        receiveList: data
+      })
+    })
+  },
+  fetchAllList: function () {
+    var that = this
+    that.fetchOrderList(0, (data) => {
+      that.setData({
+        allList: data
+      })
     })
   },
 
   fetchOrderList: function (status, fn) {
+    var that = this
     var data = {
-      userid: wx.getStorageSync('userId'),
-      status: status
+      userid: wx.getStorageSync('userId')
     }
+    if (status != 0) {data['status'] = status}
     if (this.data.key) {data['key'] = this.data.key}
     api.phpRequest({
       url: 'orderlist.php',
       data: data,
-      success: fn
+      success: (res) => {
+        for (var i in res.data) {
+          res.data[i].img = res.data[i].imgs && res.data[i].imgs.split(',')[0]
+        }
+        that.setData({
+          swiperHeight: 220 * res.data.length + "rpx"
+        })
+        fn(res.data)
+      }
     })
   },
 
@@ -133,13 +162,22 @@ Page({
     var lenth = 0
     switch (current) {
       case 0:
-        lenth = that.data.sellItemList.length
-        break;
+          lenth = that.data.sellItemList.length
+          break;
       case 1:
-        lenth = that.data.buyItemList.length
+        lenth = that.data.unPayList.length
         break;
       case 2:
-        lenth = that.data.pendItemList.length
+        lenth = that.data.pendList.length
+        break;
+      case 3:
+        lenth = that.data.deliverList.length
+        break;
+      case 4:
+        lenth = that.data.receiveList.length
+        break;
+      case 5:
+        lenth = that.data.allList.length
         break;
       default:
         break;

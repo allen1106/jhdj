@@ -50,6 +50,7 @@
 .with-icon .text-wrapper {
   height: 55%;
   align-items: flex-start;
+  font-size: 28rpx;
 }
 .with-icon .image {
   width: 35rpx;

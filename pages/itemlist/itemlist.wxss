@@ -11,14 +11,20 @@
   margin: 0 auto;
 }
 
-.item-wrapper {
-  /* height: 80vw; */
-  padding: 20rpx;
-  margin-top: 20rpx;
-  background-color: #fff;
-}
-
 .main {
   width: 90%;
   margin: 0 auto;
+}
+
+.item-list item:nth-child(2n) {
+  margin-left: 18rpx;
+}
+
+.item-wrapper {
+  display: inline-block;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  width: calc(50% - 10rpx);
+  background-color: #fff;
+  border-radius: 20rpx;
 }
