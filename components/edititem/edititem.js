@@ -3,6 +3,7 @@ var api = require("../../utils/api.js")
 var util = require("../../utils/util.js")
 const app = getApp()
 
+
 Component({
   /**
    * 组件的属性列表
@@ -21,7 +22,7 @@ Component({
     imgCount: 6,
     imgList: [],
     tagList: [],
-    typeList: [{'cid': 0, 'name': '请选择分类'}],
+    typeList: [],
     typeIdx: 0,
     lng: null,
     lat: null,
@@ -38,9 +39,10 @@ Component({
   pageLifetimes: {
     show() {
       var that = this
+      console.log(that.data.typeList)
 
       that.setData({
-        typeList: that.data.typeList.concat(app.globalData.typeList),
+        typeList: [{'cid': 0, 'name': '请选择分类'}].concat(app.globalData.typeList),
         tagList: app.globalData.tagList
       })
 
