@@ -17,19 +17,19 @@
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
-		"compileHotReLoad": false,
 		"babelSetting": {
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
 		},
-		"useIsolateContext": true,
-		"useCompilerModule": false,
-		"userConfirmedUseCompilerModuleSwitch": false
+		"useCompilerModule": true,
+		"userConfirmedUseCompilerModuleSwitch": false,
+		"compileHotReLoad": false,
+		"useIsolateContext": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.5.0",
-	"appid": "wx62578c850e99fc7c",
+	"appid": "wx4265d1a48d47323c",
 	"projectname": "yhdj",
 	"debugOptions": {
 		"hidedInDevtools": []
