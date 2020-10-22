@@ -73,15 +73,33 @@ Page({
     })
   },
 
+  validateInfo: function (data) {
+    if (!data['name']) return '收货人姓名'
+    if (!data['tel']) return '收货人电话'
+    if (!data['address']) return '收货人地址'
+    return 'success'
+  },
 
-  bindPay: function () {
+  bindPay: function (e) {
     var that = this
+    var data = e.detail.value
+    var valid = that.validateInfo(data)
+    if (valid != "success") {
+      wx.showToast({
+        title: valid + '不能为空',
+        icon: 'none',
+      })
+      return
+    }
     api.phpRequest({
       url: 'wxpay.php',
       data: {
         userid: wx.getStorageSync('userId'),
         orderid: that.data.orderId,
-        agentidd: that.data.agentId
+        agentid: that.data.agentId,
+        people: data['name'],
+        tel: data['tel'],
+        address: data['address'],
       },
       method: 'post',
       header: {'content-type': 'application/x-www-form-urlencoded'},

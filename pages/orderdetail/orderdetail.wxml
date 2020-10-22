@@ -13,6 +13,7 @@
   </view>
   <block wx:if="{{orderInfo.agent}}">
     <view class="detail-wrapper">
+      <view class="title">联系人：{{orderInfo.people}}</view>
       <view class="title">联系电话：{{orderInfo.phone}}</view>
       <view>联系地址：{{orderInfo.address}}</view>
       <map wx:if="{{!orderInfo.old}}" id="map" longitude="{{orderInfo.lng}}" latitude="{{orderInfo.lat}}" scale="14" show-location style="width: 100%; height: 200px;" bindtap="bindOpenLoc" markers="{{markers}}"></map>
