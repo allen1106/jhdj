@@ -79,15 +79,18 @@ Page({
           sellItemList: res.data
         })
         if (that.data.currentTab == 0) {
-          var query = that.createSelectorQuery()
-          console.log(query.select('#node').boundingClientRect())
-          query.select('#node').boundingClientRect()
-          query.exec(function (res1) {
-            let sumHeigth = (res1[0].height + 10) * res.data.length + 'px'
-            that.setData({
-              swiperHeight: sumHeigth
-            })
+          that.setData({
+            swiperHeight: 195 * res.data.length + "rpx"
           })
+          // var query = that.createSelectorQuery()
+          // console.log(query.select('#node').boundingClientRect())
+          // query.select('#node').boundingClientRect()
+          // query.exec(function (res1) {
+          //   let sumHeigth = (res1[0].height + 10) * res.data.length + 'px'
+          //   that.setData({
+          //     swiperHeight: sumHeigth
+          //   })
+          // })
         }
       }
     })
@@ -149,7 +152,7 @@ Page({
           res.data[i].img = res.data[i].imgs && res.data[i].imgs.split(',')[0]
         }
         that.setData({
-          swiperHeight: 220 * res.data.length + "rpx"
+          swiperHeight: 195 * res.data.length + "rpx"
         })
         fn(res.data)
       }
@@ -184,7 +187,7 @@ Page({
     }
     this.setData({
       currentTab: current,
-      swiperHeight: 220 * lenth + "rpx"
+      swiperHeight: 195 * lenth + "rpx"
     })
   },
 

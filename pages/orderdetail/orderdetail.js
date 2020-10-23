@@ -132,35 +132,38 @@ Page({
 
   bindPay: function () {
     var that = this
-    api.phpRequest({
-      url: 'wxpay.php',
-      data: {
-        userid: wx.getStorageSync('userId'),
-        orderid: that.data.id
-      },
-      method: 'post',
-      header: {'content-type': 'application/x-www-form-urlencoded'},
-      success: function (res) {
-        let payInfo = res.data
-        wx.requestPayment({
-          timeStamp: payInfo.timeStamp,
-          nonceStr: payInfo.nonceStr,
-          package: payInfo.package,
-          signType: 'MD5',
-          paySign: payInfo.paySign,
-          success (res) {
-            wx.showToast({
-              title: '支付成功',
-            })
-            that.init(that.data.id)
-          },
-          fail (res) {
-            wx.showToast({
-              title: '支付失败',
-            })
-          }
-        })
-      }
+    // api.phpRequest({
+    //   url: 'wxpay.php',
+    //   data: {
+    //     userid: wx.getStorageSync('userId'),
+    //     orderid: that.data.id
+    //   },
+    //   method: 'post',
+    //   header: {'content-type': 'application/x-www-form-urlencoded'},
+    //   success: function (res) {
+    //     let payInfo = res.data
+    //     wx.requestPayment({
+    //       timeStamp: payInfo.timeStamp,
+    //       nonceStr: payInfo.nonceStr,
+    //       package: payInfo.package,
+    //       signType: 'MD5',
+    //       paySign: payInfo.paySign,
+    //       success (res) {
+    //         wx.showToast({
+    //           title: '支付成功',
+    //         })
+    //         that.init(that.data.id)
+    //       },
+    //       fail (res) {
+    //         wx.showToast({
+    //           title: '支付失败',
+    //         })
+    //       }
+    //     })
+    //   }
+    // })
+    wx.navigateTo({
+      url: '/pages/buyitem/buyitem?orderid=' + that.data.orderInfo.id
     })
   },
 

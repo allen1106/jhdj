@@ -15,7 +15,7 @@
       <input name="tel" placeholder="输入收货人电话"></input>
       <textarea name="address" placeholder="输入收货地址"></textarea>
     </view>
-    <view class="pickup-wrapper">
+    <view class="pickup-wrapper" wx:if="{{itemInfo.flag}}">
       <picker bindchange="bindPickChange" value="{{pickIdx}}" range="{{pickAddrList}}" range-key="shopname">
         <view class="picker">
             取货地址：{{pickAddrList[pickIdx].shopname}}

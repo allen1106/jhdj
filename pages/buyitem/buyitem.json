@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "tab-bar": "/custom-tab-bar/index"
-  }
+  },
+  "navigationBarTitleText": "久航大集"
 }

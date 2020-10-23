@@ -59,3 +59,7 @@ swiper-item{
   margin-top: 20rpx;
   background-color: #fff;
 }
+
+.main {
+  padding: 20rpx;
+}
